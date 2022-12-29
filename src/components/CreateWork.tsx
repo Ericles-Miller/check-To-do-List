@@ -1,5 +1,5 @@
 import styles from './createWork.module.css';
-
+import plus from '../img/Layer 1.svg';
 export function CreateWork() {
   return (
     <div className={styles.globalDiv} >
@@ -11,6 +11,7 @@ export function CreateWork() {
           />
           <button type='submit'>
             Criar
+            <img src={plus} alt="" />
           </button>
         </form>
       </div>

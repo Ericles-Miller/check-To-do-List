@@ -17,14 +17,12 @@
     height: 54px;
     background: transparent;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .form textarea ::placeholder {
     color: var(--gray-300);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
 }
 
 .form button {
