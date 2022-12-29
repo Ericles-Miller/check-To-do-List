@@ -1,0 +1,39 @@
+.globalDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.form {
+    display: flex;
+    justify-items: center;
+
+}
+
+.form textarea {
+    width: 638px;
+    height: 54px;
+    background: transparent;
+    display: flex;
+}
+
+.form textarea ::placeholder {
+    color: var(--gray-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.form button {
+    background:var(--blue-dark);
+    color: white;
+    width: 90px;
+    height: 52px;
+    margin-left: 8px;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 140%;
+}
