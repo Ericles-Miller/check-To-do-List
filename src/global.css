@@ -16,6 +16,15 @@
     --purple-dark: #5E60CE;
 }
 
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
 
 body, input, textarea, button {
     font-family: 'Roboto', sans-serif;

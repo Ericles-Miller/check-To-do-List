@@ -1,20 +1,6 @@
-.wrapper {
-    max-width: 70rem; /* largura do sidebar e feed*/
-    margin: 2rem auto;
-    padding: 0 1rem;
-
-    display: grid;
-    grid-template-columns: 256px 1fr; /* 1fr unidade usada para tamanho flexivel*/
-    gap: 2rem; /* espcamento entre o sidebar e feed*/
-    align-items: flex-start; /* forca alinha com o topo*/ 
+.showWorks {
+    background: var(--gray-600);
+    height: 100vw;
 }
 
 
-@media (max-width: 768px) {
-    .wrapper{
-        grid-template-columns: 1fr;
-    }
-    html {
-        font-size: 87.5%;
-    }
-}
