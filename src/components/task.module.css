@@ -1,0 +1,31 @@
+.allContentTask{
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    width: 46rem;
+    height: 17.938rem;
+    background: transparent;
+    margin: 0 22rem 27.875rem 32rem;
+}
+
+.stylesTask{
+    display: flex;
+    justify-content: center;
+}
+
+.newTask{
+    margin: 0.063rem 0.5rem 0.063rem 0;
+    color: var(--blue);
+    font-size: 0.875rem;
+    font-weight: 700;
+
+} 
+
+
+
+.makeTask{
+    margin: 0.063rem 0.5rem 0.063rem 0;
+    color: var(--purple);
+    font-size: 0.875rem;
+    font-weight: 700;
+}

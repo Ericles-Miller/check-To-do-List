@@ -1,6 +1,6 @@
-import styles from './createWork.module.css';
+import styles from './createContent.module.css';
 import plus from '../img/Layer 1.svg';
-export function CreateWork() {
+export function CreateContent() {
   return (
     <div className={styles.globalDiv} >
       <div>
