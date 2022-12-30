@@ -5,11 +5,9 @@
 }
 
 
-
 .form {
     display: flex;
     justify-items: center;
-
 }
 
 .form textarea {
