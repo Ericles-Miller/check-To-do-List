@@ -9,6 +9,7 @@
     display: flex;
     justify-items: center;
     margin-top: -1.55rem;
+    margin-bottom: 4rem;
 }
 
 .form input {
@@ -30,7 +31,7 @@
     color: white;
     margin-left: 0.5rem;
     padding: 1rem;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 140%;
     border-radius: 0.5rem;
     border: none;

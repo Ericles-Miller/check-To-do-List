@@ -2,8 +2,8 @@ import { useState } from 'react';
 import './global.css';
 import { Header } from './components/Header';
 import styles from './app.module.css';
-import { CreateWork } from './components/CreateWork';
-
+import { Tasks } from './components/Tasks';
+import {CreateContent} from './components/CreateContent';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -12,7 +12,8 @@ function App() {
 
       <Header></Header>
       <body className={styles.showWorks} >
-        <CreateWork></CreateWork>
+        <CreateContent />
+        <Tasks />
       </body>
       
     
