@@ -5,13 +5,15 @@ export function CreateWork() {
     <div className={styles.globalDiv} >
       <div>
         <form className={styles.form}>
-          <textarea
-            name='comment'
+          <input
+            type='text'
             placeholder='Adicione uma nova tarefa'
           />
           <button type='submit'>
-            Criar
+            <div className={styles.buttonAndParagraph}>
+            <p>Criar</p>
             <img src={plus} alt="" />
+            </div>
           </button>
         </form>
       </div>
