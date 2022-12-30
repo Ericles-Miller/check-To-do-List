@@ -36,15 +36,16 @@
     width: 3rem;
     box-sizing: border-box;
     border: 2px solid var(--gray-100);
-    border-radius: 4px;
+    border-radius: 1000px;
     margin-right: 10px;
     background-color: transparent;
-    background-image: url('../img/check.svg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    transition: .3s ease-in-out;
+    
 }
 
 .checkboxA:checked + .checkboxLabel::before {
     background-color: var(--purple);
+    background-image: url('../img/check.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: .3s ease-in-out;
 } 
