@@ -6,18 +6,19 @@
     padding: 1rem;
 }
 
+.UnionAttributesTask section{
+    margin: 1rem;
+} 
+
 .UnionAttributesTask label  {
     margin: 0 0.75rem;
     font-size: 0.875rem;
     line-height: 1.225rem;
 }
 
-.UnionAttributesTask input {
-    background: transparent;
-}
-
 .checkboxA {
     display: none;
+    margin-left: 0.5rem;
 }
 
 .checkboxLabel{
@@ -50,5 +51,6 @@
     background-position: center center;
     transition: .1s ease-in-out;
     border: 2px solid var(--purple);
+    text-decoration: line-through;
 
 } 
