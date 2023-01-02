@@ -1,5 +1,6 @@
 import styles from './checkList.module.css';
 import trash from '../img/trash.svg'
+
 export function CheckList() {
   return (
     <div className={styles.UnionAttributesTask}>

@@ -5,7 +5,11 @@
     border: 1px solid var(--gray-400);
     padding: 1rem;
 }
-
+.UnionAttributesTask section  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .UnionAttributesTask label  {
     margin: 0 0.75rem;
     font-size: 0.875rem;
