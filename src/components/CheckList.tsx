@@ -6,7 +6,7 @@ export function CheckList() {
     <div className={styles.UnionAttributesTask}>
       <section>
         <input type="checkbox" id='checkbox' className={styles.checkboxA}/>
-        <label htmlFor='checkbox' className={styles.checkboxLabel}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer sdfsdfsd sdfs ghfghf hegets fsddgsduhrt svdsf s .</label>
+        <label htmlFor='checkbox' className={styles.checkboxLabel}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</label>
         <img src={trash} alt="" />
       </section>
     </div>

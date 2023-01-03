@@ -16,7 +16,6 @@ function App() {
       <body className={styles.showWorks} >
         <CreateContent />
         <Tasks />
-        <CheckList></CheckList>
       </body>
       
     

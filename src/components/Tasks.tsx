@@ -1,5 +1,6 @@
 import styles from './task.module.css';
 import clipBoard from '../img/Clipboard.svg';
+import { CheckList } from './CheckList';
 
 
 export function Tasks() {
@@ -19,6 +20,7 @@ export function Tasks() {
 				<img src={clipBoard} alt="" />
 				<p><strong>Você ainda não tem tarefas cadastradas</strong></p>
 				<p>Crie tarefas e organize seus itens a fazer</p>
+				<CheckList></CheckList>
 			</div>
 		</div>
 	)
