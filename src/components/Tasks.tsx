@@ -10,8 +10,25 @@ interface IContentTask {
 }
 
 export function Tasks({  countTask, task }: IContentTask) {
-  const [countCompletedTask, setCountCompletedTask] = useState(0);
 
+  // function handleCompletedTasks() {
+  //   let count = 0;
+  //   task.filter(item => {
+  //     if (item.isCompleted === true) {
+  //       count++;
+  //     }
+  //   })
+  //   setCompletedTasks(count)
+  // };
+  
+  // function changeIsComplete(id: number) {
+  //   task.map(item => {
+  //     if (item.id === id) {
+  //       item.isCompleted = !item.isCompleted
+  //     }
+  //   })
+  //   handleCompletedTasks();
+  // };
 
   return (
     <div className={styles.allContentTasks}>
@@ -38,7 +55,12 @@ export function Tasks({  countTask, task }: IContentTask) {
           </div>
           :
           task.map((item:any)=> {
-            return <CheckList key={item} taskValue={item} />
+            return <CheckList 
+              key={item.id}
+              id={item.id}
+              taskValue={item.content}
+              isCompleted={item.isCompleted}             
+            />
           })
         }
       </div>

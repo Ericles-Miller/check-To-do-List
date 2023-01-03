@@ -2,18 +2,30 @@ import styles from './checkList.module.css';
 import trash from '../img/trash.svg'
 
 interface ITask { //mudar o nome da interface
-  taskValue: object[];
-  //idValue: number;
+  taskValue: string;
+  id: string;
+  isCompleted:boolean;
 }
 
-export function CheckList({ taskValue }: ITask) {
-  console.log(taskValue)
+interface IFunctionTask{
+  onChangeIsComplete: (id: string) => void;
+  onDeleteTask: (id: string) => void;
+}
+
+export function CheckList({isCompleted,id,taskValue }: ITask, {onChangeIsComplete,onDeleteTask}:IFunctionTask) {
+
+  
+
+
+
+
+  console.log(id, taskValue)
   return (
     <div className={styles.UnionAttributesTask}>
-      <section>
-        <input type="checkbox"  id='checkbox' className={styles.checkboxA} />
-        <label htmlFor='checkbox'  className={styles.checkboxLabel}>
-          
+      <section key={id}>
+        <input type="checkbox" id={id} className={styles.checkboxA} />
+        <label htmlFor={id}  className={styles.checkboxLabel}>
+          {taskValue}
         </label>
         <img src={trash} alt="" />
       </section>
