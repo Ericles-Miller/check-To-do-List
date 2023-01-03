@@ -3,38 +3,46 @@ import clipBoard from '../img/Clipboard.svg';
 import { CheckList } from './CheckList';
 import { useState } from 'react';
 
+interface ICountTask {
+  countTask: number;
+  task: string[];
+}
 
-export function Tasks(props) {
+export function Tasks({ countTask, task }: ICountTask) {
 
-  const [countMakeTask, setCountMakeTask] = useState(0);
-
-  // const [countConclude]
+  const [countCompletedTask, setCountCompletedTask] = useState(0);
 
 
-	return (
-		<div className={styles.allContentTasks}>
-			<div className={styles.headerTask}>
-				<div className={styles.stylesTask}>
+  return (
+    <div className={styles.allContentTasks}>
+      <div className={styles.headerTask}>
+        <div className={styles.stylesTask}>
 
-					<p className={styles.newTask}>Tarefas Criadas</p>
-					<span className={styles.number}>0</span>
+          <p className={styles.newTask}>Tarefas Criadas</p>
+          <span className={styles.number}>{countTask}</span>
 
-				</div>
-				<div className={styles.stylesTask}>
+        </div>
+        <div className={styles.stylesTask}>
 
-					<p className={styles.makeTask}>Concluidas</p>
-					<span className={styles.number}>0</span>
+          <p className={styles.makeTask}>Concluidas</p>
+          <span className={styles.number}>0</span>
 
-				</div>
-			</div>
-			<div className={styles.showTasks}>
-				<img src={clipBoard} alt="" />
+        </div>
+      </div>
+      <div className={styles.showTasks}>
+        {countTask === 0 ?
+          <>
+            <img src={clipBoard} alt="" />
+            <p><strong>Você ainda não tem tarefas cadastradas</strong></p>
+            <p>Crie tarefas e organize seus itens a fazer</p></>
+          :
+          <CheckList 
+            task={task} />
+        }
 
-				<p><strong>Você ainda não tem tarefas cadastradas</strong></p>
-				<p>Crie tarefas e organize seus itens a fazer</p>
 
-				<CheckList />
-			</div>
-		</div>
-	)
+
+      </div>
+    </div>
+  )
 }
