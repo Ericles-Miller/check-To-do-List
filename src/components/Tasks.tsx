@@ -3,12 +3,12 @@ import clipBoard from '../img/Clipboard.svg';
 import { CheckList } from './CheckList';
 import { useState } from 'react';
 
-interface ICountTask {
+interface IContentTask {
   countTask: number;
   task: string[];
 }
 
-export function Tasks({ countTask, task }: ICountTask) {
+export function Tasks({ countTask, task }: IContentTask) {
 
   const [countCompletedTask, setCountCompletedTask] = useState(0);
 
@@ -31,18 +31,17 @@ export function Tasks({ countTask, task }: ICountTask) {
       </div>
       <div className={styles.showTasks}>
         {countTask === 0 ?
-          <>
+          <div className={styles.notTasks}>
             <img src={clipBoard} alt="" />
             <p><strong>Você ainda não tem tarefas cadastradas</strong></p>
-            <p>Crie tarefas e organize seus itens a fazer</p></>
+            <p>Crie tarefas e organize seus itens a fazer</p>
+          </div>
           :
           <CheckList 
-            task={task} />
+            task={task}
+          />
         }
-
-
-
       </div>
     </div>
-  )
+  );
 }
