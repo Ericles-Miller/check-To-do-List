@@ -35,6 +35,7 @@ export function CreateContent() {
               placeholder='Adicione uma nova tarefa'
               onChange={handleNewTaskChange}
               value={newTaskText}
+              required
             />
             <button type='submit'>
               <div className={styles.buttonAndParagraph}>

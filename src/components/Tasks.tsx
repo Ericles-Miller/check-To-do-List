@@ -37,9 +37,9 @@ export function Tasks({ countTask, task }: IContentTask) {
             <p>Crie tarefas e organize seus itens a fazer</p>
           </div>
           :
-          <CheckList 
-            task={task}
-          />
+          task.map((item:any)=>{
+            return <CheckList key={item} taskValue={item} />
+          })
         }
       </div>
     </div>
