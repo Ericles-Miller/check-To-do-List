@@ -5,13 +5,13 @@ import { useState } from 'react';
 
 interface IContentTask {
   countTask: number;
-  task: string[];
+  task: object[];
 }
 
-export function Tasks({ countTask, task }: IContentTask) {
-
+export function Tasks({  countTask, task }: IContentTask) {
   const [countCompletedTask, setCountCompletedTask] = useState(0);
 
+  console.log(task);
 
   return (
     <div className={styles.allContentTasks}>
@@ -37,7 +37,7 @@ export function Tasks({ countTask, task }: IContentTask) {
             <p>Crie tarefas e organize seus itens a fazer</p>
           </div>
           :
-          task.map((item:any)=>{
+          task.map((item:any)=> {
             return <CheckList key={item} taskValue={item} />
           })
         }

@@ -2,26 +2,41 @@ import styles from './createContent.module.css';
 import plus from '../img/Layer 1.svg';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { Tasks } from './Tasks';
+import { v4 as uuid } from 'uuid';
+
+interface ITaskProps{
+  id: number;
+  content: string;
+  isCompleted:boolean;
+}
 
 export function CreateContent() {
 
-  const [task, setTask] = useState<string[]>([]);
+  const [task, setTask] = useState<ITaskProps[]>([]);
+
   const [countTask, setCountTask] = useState(0);
   const [newTaskText, setNewTaskText] = useState('');
 
-
   function handleCreateNewTask(event: FormEvent) { // recebo o evento de form 
     event.preventDefault(); // not reload page
-    setTask([...task, newTaskText]);
+    
+    const contentTask = {
+      id: uuid(),
+      content: newTaskText,
+      isCompleted: false
+    }
+
+
+    setTask([...task, contentTask]);
     setNewTaskText('');
     setCountTask(countTask+1);
+    
   }
 
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
     event.target.setCustomValidity('');
     setNewTaskText(event.target.value);
   }
-  console.log(task);
   return (
     <div className={styles.showWorks}>
       <div className={styles.globalDiv} >
