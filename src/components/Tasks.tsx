@@ -3,12 +3,12 @@ import clipBoard from '../img/Clipboard.svg';
 import { CheckList } from './CheckList';
 import { useState } from 'react';
 
-interface ICountTask {
+interface IContentTask {
   countTask: number;
   task: string[];
 }
 
-export function Tasks({ countTask, task }: ICountTask) {
+export function Tasks({ countTask, task }: IContentTask) {
 
   const [countCompletedTask, setCountCompletedTask] = useState(0);
 
@@ -37,7 +37,8 @@ export function Tasks({ countTask, task }: ICountTask) {
             <p>Crie tarefas e organize seus itens a fazer</p></>
           :
           <CheckList 
-            task={task} />
+            task={task}
+          />
         }
 
 
