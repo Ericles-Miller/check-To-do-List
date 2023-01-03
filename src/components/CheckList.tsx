@@ -7,19 +7,9 @@ interface ITask { //mudar o nome da interface
   isCompleted:boolean;
 }
 
-interface IFunctionTask{
-  onChangeIsComplete: (id: string) => void;
-  onDeleteTask: (id: string) => void;
-}
-
-export function CheckList({isCompleted,id,taskValue }: ITask, {onChangeIsComplete,onDeleteTask}:IFunctionTask) {
+export function CheckList({isCompleted,id,taskValue }: ITask) {
 
   
-
-
-
-
-  console.log(id, taskValue)
   return (
     <div className={styles.UnionAttributesTask}>
       <section key={id}>

@@ -3,9 +3,12 @@ import plus from '../img/Layer 1.svg';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { Tasks } from './Tasks';
 import { v4 as uuid } from 'uuid';
-import ITaskProps from '../interfaces/ITaskProps';
 
-
+export default interface ITaskProps{
+  id: number;
+  content: string;
+  isCompleted:boolean;
+}
 
 export function CreateContent() {
 
