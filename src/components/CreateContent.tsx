@@ -1,6 +1,7 @@
 import styles from './createContent.module.css';
 import plus from '../img/Layer 1.svg';
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { Tasks } from './Tasks';
 
 export function CreateContent() {
 
@@ -8,20 +9,20 @@ export function CreateContent() {
 
   const [newTaskText, setNewTaskText] = useState('');
 
+  
   function handleCreateNewTask(event:FormEvent) { // recebo o evento de form 
     event.preventDefault(); // not reload page
     setTask([...task, newTaskText]);
     setNewTaskText('');
   }
-  console.log(task);
+
   function handleNewTaskChange(event:ChangeEvent<HTMLInputElement>) {
     event.target.setCustomValidity('');
-    console.log(newTaskText)
     setNewTaskText(event.target.value);
   }
-
-
+  console.log(task);
   return (
+    <div className={styles.showWorks}>
     <div className={styles.globalDiv} >
       <div>
         <form 
@@ -42,6 +43,8 @@ export function CreateContent() {
           </button>
         </form>
       </div>
+      </div>
+      <Tasks />
     </div>
   )
 }
