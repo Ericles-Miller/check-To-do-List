@@ -1,5 +1,7 @@
 import styles from './task.module.css';
 import clipBoard from '../img/Clipboard.svg';
+
+
 export function Tasks() {
 	return (
 		<div className={styles.allContentTasks}>

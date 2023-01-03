@@ -1,4 +1,56 @@
 .UnionAttributesTask {
     background: var(--gray-500);
     color: var(--gray-100);
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-400);
+    padding: 1rem;
 }
+.UnionAttributesTask section  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.UnionAttributesTask label  {
+    margin: 0 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.225rem;
+}
+
+.checkboxA {
+    display: none;
+    margin-left: 0.5rem;
+}
+
+.checkboxLabel{
+    display: flex;
+    align-items: center;
+    letter-spacing: center;
+    font-size: 1.225rem;
+    color: var(--gray-100);
+    cursor: pointer; 
+}
+
+.checkboxLabel::before{
+    content: '';
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    box-sizing: border-box;
+    border: 2px solid var(--blue);
+    border-radius: 1000px;
+    margin-right: 10px;
+    background-color: transparent;
+    
+}
+
+.checkboxA:checked + .checkboxLabel::before {
+    background-color: var(--purple);
+    background-image: url('../img/check.svg');
+    background-size: 0.5rem 0.5rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: .1s ease-in-out;
+    border: 2px solid var(--purple);
+    text-decoration: line-through; /*nao funfa*/
+
+} 

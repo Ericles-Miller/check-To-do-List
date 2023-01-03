@@ -1,6 +1,12 @@
 import styles from './createContent.module.css';
 import plus from '../img/Layer 1.svg';
+
 export function CreateContent() {
+
+  
+
+
+
   return (
     <div className={styles.globalDiv} >
       <div>
