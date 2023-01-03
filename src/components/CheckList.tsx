@@ -8,9 +8,10 @@ interface ITask { //mudar o nome da interface
 
 export function CheckList({ task }: ITask) {
   return (
-    <div className={styles.UnionAttributesTask}>
-      {
-        task != undefined && task.map((item:any) => (
+    <>
+    {
+      task != undefined && task.map((item:any) => (
+          <div className={styles.UnionAttributesTask}>
           <section>
             <input type="checkbox" id='checkbox' className={styles.checkboxA} />
             <label htmlFor='checkbox' className={styles.checkboxLabel}>
@@ -18,8 +19,10 @@ export function CheckList({ task }: ITask) {
             </label>
             <img src={trash} alt="" />
           </section>
-        ))
-      }
+        
     </div>
+    ))
+  }
+  </>
   );
 }

@@ -31,19 +31,17 @@ export function Tasks({ countTask, task }: IContentTask) {
       </div>
       <div className={styles.showTasks}>
         {countTask === 0 ?
-          <>
+          <div className={styles.notTasks}>
             <img src={clipBoard} alt="" />
             <p><strong>Você ainda não tem tarefas cadastradas</strong></p>
-            <p>Crie tarefas e organize seus itens a fazer</p></>
+            <p>Crie tarefas e organize seus itens a fazer</p>
+          </div>
           :
           <CheckList 
             task={task}
           />
         }
-
-
-
       </div>
     </div>
-  )
+  );
 }
