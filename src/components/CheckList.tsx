@@ -7,7 +7,7 @@ interface ITask { //mudar o nome da interface
 }
 
 export function CheckList({ taskValue }: ITask) {
-
+  console.log(taskValue)
   return (
     <div className={styles.UnionAttributesTask}>
       <section>

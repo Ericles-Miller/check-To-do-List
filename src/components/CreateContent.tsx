@@ -3,12 +3,9 @@ import plus from '../img/Layer 1.svg';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { Tasks } from './Tasks';
 import { v4 as uuid } from 'uuid';
+import ITaskProps from '../interfaces/ITaskProps';
 
-interface ITaskProps{
-  id: number;
-  content: string;
-  isCompleted:boolean;
-}
+
 
 export function CreateContent() {
 
@@ -37,6 +34,7 @@ export function CreateContent() {
     event.target.setCustomValidity('');
     setNewTaskText(event.target.value);
   }
+
   return (
     <div className={styles.showWorks}>
       <div className={styles.globalDiv} >

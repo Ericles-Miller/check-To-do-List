@@ -2,16 +2,16 @@ import styles from './task.module.css';
 import clipBoard from '../img/Clipboard.svg';
 import { CheckList } from './CheckList';
 import { useState } from 'react';
+import ITaskProps from '../interfaces/ITaskProps';
 
 interface IContentTask {
   countTask: number;
-  task: object[];
+  task: ITaskProps[];
 }
 
 export function Tasks({  countTask, task }: IContentTask) {
   const [countCompletedTask, setCountCompletedTask] = useState(0);
 
-  console.log(task);
 
   return (
     <div className={styles.allContentTasks}>
