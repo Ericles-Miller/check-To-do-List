@@ -3,6 +3,7 @@ import clipBoard from '../img/Clipboard.svg';
 import { CheckList } from './CheckList';
 import ITaskProps from './CreateContent';
 import { useState } from 'react';
+import { string } from 'prop-types';
 
 interface IContentTask {
   countTask: number;
@@ -11,31 +12,37 @@ interface IContentTask {
 }
 
 export function Tasks({ countTask, task, listDeleteTask }: IContentTask) {
+  const [completedTask, setCompletedTask] = useState(0);
 
-  const [completedTask, setCompletedTask] = useState(Number);
-  
-  // function handleCompletedTask(){
-    
-  // }
-  
-  // function changeIsComplete(id: number) {
-  //   task.map(item => {
-  //     if (item.id === id) {
-  //       item.isCompleted = !item.isCompleted
-  //     }
-  //   })
-  //   handleCompletedTask();
-  // };
+  function handleCompletedTasks(id:string) {
+    task.map(item =>{
+      if(item.id === id) {
+        if(item.isCompleted === true){
+          setCompletedTask(completedTask +1)
+        }
+        else {
+          setCompletedTask(completedTask -1);
+        }
+      }
+    })
+  }
 
-  function handleDeleteTask(id:string) {
-    console.log('entrou');
+  function changeIsComplete(id: string) {
+    task.map(item => {
+      if (item.id === id) {
+        console.log(item.isCompleted);
+        item.isCompleted = !item.isCompleted // recebe o valor inverso
+      }
+    })
+    handleCompletedTasks(id)
+  };
 
+  function handleDeleteTask(id:string): void {
     const tasksWithoutDeletedOne = task.filter(item => {
       return item.id !== id;
     })
     listDeleteTask(tasksWithoutDeletedOne)
   }
-
 
   return (
     <div className={styles.allContentTasks}>
@@ -49,7 +56,7 @@ export function Tasks({ countTask, task, listDeleteTask }: IContentTask) {
         <div className={styles.stylesTask}>
 
           <p className={styles.makeTask}>Concluidas</p>
-          <span className={styles.number}>0</span>
+          <span className={styles.number}>{completedTask}</span>
 
         </div>
       </div>
@@ -67,7 +74,7 @@ export function Tasks({ countTask, task, listDeleteTask }: IContentTask) {
               id={item.id}
               taskValue={item.content}
               isCompleted={item.isCompleted}
-              //onChangeIsComplete={changeIsComplete}
+              onChangeIsComplete={changeIsComplete}
               onDeleteTask={handleDeleteTask}             
             />
           })

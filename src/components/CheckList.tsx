@@ -5,15 +5,15 @@ interface ITask { //mudar o nome da interface
   taskValue: string;
   id: string;
   isCompleted:boolean;
-  //onChangeIsComplete: (id: string) => void;
+  onChangeIsComplete: (id: string) => void;
   onDeleteTask: (id: string) => void;
 }
 
-export function CheckList({isCompleted,id,taskValue,onDeleteTask }: ITask) {
+export function CheckList({isCompleted,id,taskValue,onChangeIsComplete,onDeleteTask }: ITask) {
 
-  // function handleChangeIsComplete() {
-  //   onChangeIsComplete(id);
-  // }
+  function handleChangeIsComplete() {
+    onChangeIsComplete(id);
+  }
 
   function handleDeleteTask() {
     onDeleteTask(id)
@@ -26,10 +26,10 @@ export function CheckList({isCompleted,id,taskValue,onDeleteTask }: ITask) {
           type="checkbox"
           id={id}
           className={styles.checkboxA}
-          // onClick={}
-         />
+          onClick={handleChangeIsComplete}
+        />
         <label htmlFor={id}  className={styles.checkboxLabel}>
-          {taskValue}
+          <p>{taskValue}</p>
         </label>
         <button style={{background:'transparent', border:'none'}}
           type='button'

@@ -28,8 +28,11 @@
     align-items: center;
     letter-spacing: center;
     font-size: 1.225rem;
+}
+
+.checkboxLabel p{
     color: var(--gray-100);
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .checkboxLabel::before{
@@ -41,11 +44,10 @@
     border: 2px solid var(--blue);
     border-radius: 1000px;
     margin-right: 10px;
-    background-color: transparent;
-    
+    background-color: transparent;    
 }
 
-.checkboxA:checked + .checkboxLabel::before {
+.checkboxA:checked + .checkboxLabel::before{
     background-color: var(--purple);
     background-image: url('../img/check.svg');
     background-size: 0.5rem 0.5rem;
@@ -53,6 +55,9 @@
     background-position: center center;
     transition: .1s ease-in-out;
     border: 2px solid var(--purple);
-    text-decoration: line-through; /*nao funfa*/
-
+    text-decoration: line-through; 
 } 
+
+.checkboxA:checked + .checkboxLabel p{
+    text-decoration: line-through;
+}
