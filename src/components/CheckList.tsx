@@ -29,7 +29,7 @@ export function CheckList({isCompleted,id,taskValue,onChangeIsComplete,onDeleteT
           onClick={handleChangeIsComplete}
         />
         <label htmlFor={id}  className={styles.checkboxLabel}>
-          {taskValue}
+          <p>{taskValue}</p>
         </label>
         <button style={{background:'transparent', border:'none'}}
           type='button'
