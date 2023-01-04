@@ -1,16 +1,40 @@
 import styles from './task.module.css';
 import clipBoard from '../img/Clipboard.svg';
 import { CheckList } from './CheckList';
+import ITaskProps from './CreateContent';
 import { useState } from 'react';
 
 interface IContentTask {
   countTask: number;
-  task: string[];
+  task: ITaskProps[];
+  listDeleteTask: (tasksWithoutDeletedOne:ITaskProps[]) => void;
 }
 
-export function Tasks({ countTask, task }: IContentTask) {
+export function Tasks({ countTask, task, listDeleteTask }: IContentTask) {
 
-  const [countCompletedTask, setCountCompletedTask] = useState(0);
+  const [completedTask, setCompletedTask] = useState(Number);
+  
+  // function handleCompletedTask(){
+    
+  // }
+  
+  // function changeIsComplete(id: number) {
+  //   task.map(item => {
+  //     if (item.id === id) {
+  //       item.isCompleted = !item.isCompleted
+  //     }
+  //   })
+  //   handleCompletedTask();
+  // };
+
+  function handleDeleteTask(id:string) {
+    console.log('entrou');
+
+    const tasksWithoutDeletedOne = task.filter(item => {
+      return item.id !== id;
+    })
+    listDeleteTask(tasksWithoutDeletedOne)
+  }
 
 
   return (
@@ -37,9 +61,16 @@ export function Tasks({ countTask, task }: IContentTask) {
             <p>Crie tarefas e organize seus itens a fazer</p>
           </div>
           :
-          <CheckList 
-            task={task}
-          />
+          task.map((item:any)=> {
+            return <CheckList 
+              key={item.id}
+              id={item.id}
+              taskValue={item.content}
+              isCompleted={item.isCompleted}
+              //onChangeIsComplete={changeIsComplete}
+              onDeleteTask={handleDeleteTask}             
+            />
+          })
         }
       </div>
     </div>
