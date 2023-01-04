@@ -17,6 +17,7 @@ export function CreateContent() {
   const [countTask, setCountTask] = useState(0);
   const [newTaskText, setNewTaskText] = useState('');
 
+
   function handleCreateNewTask(event: FormEvent) { // recebo o evento de form 
     event.preventDefault(); // not reload page
     
@@ -42,6 +43,7 @@ export function CreateContent() {
     setCountTask(countTask-1);
   }
 
+  
   return (
     <div className={styles.showWorks}>
       <div className={styles.globalDiv} >
