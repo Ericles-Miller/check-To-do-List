@@ -27,7 +27,7 @@ export function CheckList({isCompleted,id,taskValue,onChangeIsComplete,onDeleteT
           id={id}
           className={styles.checkboxA}
           onClick={handleChangeIsComplete}
-         />
+        />
         <label htmlFor={id}  className={styles.checkboxLabel}>
           {taskValue}
         </label>

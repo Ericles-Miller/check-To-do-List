@@ -3,6 +3,7 @@ import clipBoard from '../img/Clipboard.svg';
 import { CheckList } from './CheckList';
 import ITaskProps from './CreateContent';
 import { useState } from 'react';
+import { string } from 'prop-types';
 
 interface IContentTask {
   countTask: number;
@@ -13,17 +14,27 @@ interface IContentTask {
 export function Tasks({ countTask, task, listDeleteTask }: IContentTask) {
   const [completedTask, setCompletedTask] = useState(0);
 
-  function handleCompletedTasks() {
-    setCompletedTask(completedTask +1)
+  function handleCompletedTasks(id:string) {
+    task.map(item =>{
+      if(item.id === id) {
+        if(item.isCompleted === true){
+          setCompletedTask(completedTask +1)
+        }
+        else {
+          setCompletedTask(completedTask -1);
+        }
+      }
+    })
   }
 
   function changeIsComplete(id: string) {
     task.map(item => {
       if (item.id === id) {
+        console.log(item.isCompleted);
         item.isCompleted = !item.isCompleted // recebe o valor inverso
       }
     })
-    handleCompletedTasks()
+    handleCompletedTasks(id)
   };
 
   function handleDeleteTask(id:string): void {
@@ -32,8 +43,6 @@ export function Tasks({ countTask, task, listDeleteTask }: IContentTask) {
     })
     listDeleteTask(tasksWithoutDeletedOne)
   }
-
-  
 
   return (
     <div className={styles.allContentTasks}>
