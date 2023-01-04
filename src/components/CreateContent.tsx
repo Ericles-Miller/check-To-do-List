@@ -5,7 +5,7 @@ import { Tasks } from './Tasks';
 import { v4 as uuid } from 'uuid';
 
 export default interface ITaskProps{
-  id: number;
+  id: string;
   content: string;
   isCompleted:boolean;
 }
@@ -37,6 +37,11 @@ export function CreateContent() {
     setNewTaskText(event.target.value);
   }
 
+  function handleDeleteTask(tasksWithoutDeletedOne:ITaskProps[]) {
+    setTask(tasksWithoutDeletedOne);
+    setCountTask(countTask-1);
+  }
+
   return (
     <div className={styles.showWorks}>
       <div className={styles.globalDiv} >
@@ -64,6 +69,7 @@ export function CreateContent() {
       <Tasks 
         countTask ={countTask}
         task = {task}
+        listDeleteTask ={handleDeleteTask}
       />
     </div>
   )

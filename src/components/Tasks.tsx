@@ -7,25 +7,34 @@ import { useState } from 'react';
 interface IContentTask {
   countTask: number;
   task: ITaskProps[];
+  listDeleteTask: (tasksWithoutDeletedOne:ITaskProps[]) => void;
 }
 
-export function Tasks({ countTask, task }: IContentTask) {
+export function Tasks({ countTask, task, listDeleteTask }: IContentTask) {
 
   const [completedTask, setCompletedTask] = useState(Number);
   
-  function handleCompletedTask(){
+  // function handleCompletedTask(){
     
-  }
+  // }
   
-  function changeIsComplete(id: number) {
-    task.map(item => {
-      if (item.id === id) {
-        item.isCompleted = !item.isCompleted
-      }
-    })
-    handleCompletedTask();
-  };
+  // function changeIsComplete(id: number) {
+  //   task.map(item => {
+  //     if (item.id === id) {
+  //       item.isCompleted = !item.isCompleted
+  //     }
+  //   })
+  //   handleCompletedTask();
+  // };
 
+  function handleDeleteTask(id:string) {
+    console.log('entrou');
+
+    const tasksWithoutDeletedOne = task.filter(item => {
+      return item.id !== id;
+    })
+    listDeleteTask(tasksWithoutDeletedOne)
+  }
 
 
   return (
