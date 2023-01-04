@@ -2,14 +2,31 @@ import styles from './task.module.css';
 import clipBoard from '../img/Clipboard.svg';
 import { CheckList } from './CheckList';
 import ITaskProps from './CreateContent';
-
+import { useState } from 'react';
 
 interface IContentTask {
   countTask: number;
   task: ITaskProps[];
 }
 
-export function Tasks({  countTask, task }: IContentTask) {
+export function Tasks({ countTask, task }: IContentTask) {
+
+  const [completedTask, setCompletedTask] = useState(Number);
+  
+  function handleCompletedTask(){
+    
+  }
+  
+  function changeIsComplete(id: number) {
+    task.map(item => {
+      if (item.id === id) {
+        item.isCompleted = !item.isCompleted
+      }
+    })
+    handleCompletedTask();
+  };
+
+
 
   return (
     <div className={styles.allContentTasks}>
@@ -40,7 +57,9 @@ export function Tasks({  countTask, task }: IContentTask) {
               key={item.id}
               id={item.id}
               taskValue={item.content}
-              isCompleted={item.isCompleted}             
+              isCompleted={item.isCompleted}
+              //onChangeIsComplete={changeIsComplete}
+              onDeleteTask={handleDeleteTask}             
             />
           })
         }

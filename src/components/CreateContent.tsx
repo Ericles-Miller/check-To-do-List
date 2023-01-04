@@ -26,7 +26,6 @@ export function CreateContent() {
       isCompleted: false
     }
 
-
     setTask([...task, contentTask]);
     setNewTaskText('');
     setCountTask(countTask+1);

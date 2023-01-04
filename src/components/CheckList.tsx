@@ -5,19 +5,38 @@ interface ITask { //mudar o nome da interface
   taskValue: string;
   id: string;
   isCompleted:boolean;
+  //onChangeIsComplete: (id: string) => void;
+  onDeleteTask: (id: string) => void;
 }
 
-export function CheckList({isCompleted,id,taskValue }: ITask) {
+export function CheckList({isCompleted,id,taskValue,onDeleteTask }: ITask) {
 
+  // function handleChangeIsComplete() {
+  //   onChangeIsComplete(id);
+  // }
+
+  function handleDeleteTask() {
+    onDeleteTask(id)
+  }
   
   return (
     <div className={styles.UnionAttributesTask}>
       <section key={id}>
-        <input type="checkbox" id={id} className={styles.checkboxA} />
+        <input 
+          type="checkbox"
+          id={id}
+          className={styles.checkboxA}
+          // onClick={}
+         />
         <label htmlFor={id}  className={styles.checkboxLabel}>
           {taskValue}
         </label>
-        <img src={trash} alt="" />
+        <button style={{background:'transparent', border:'none'}}
+          type='button'
+          title='delete'
+          onClick={handleDeleteTask}>
+          <img src={trash} alt="" />
+        </button>
       </section>
     </div>
   );
